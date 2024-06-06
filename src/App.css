@@ -1,0 +1,62 @@
+
+  .container {
+    text-align: center;
+  }
+  
+  .title {
+    text-align: center;
+    background-color: #7ec27e;
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 50px;
+    font-size: 60px;
+  }
+  
+  .input-container {
+    display: flex; 
+    width:100%;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    gap: 10px; 
+    margin-top: 20px; 
+  }
+
+  
+  
+  .input {
+    padding: 5px;
+    font-size: 16px;
+    width: 30%;
+  }
+  
+  .addtask, .deltask {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .addtask {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    width: 30%;
+  }
+  
+  .deltask {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    width: 30%
+  }
+  
+  .resttask {
+    border: none;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  .task{
+    margin-right: auto;
+  }
