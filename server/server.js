@@ -10,13 +10,13 @@ const bodyParser = require('body-parser');
 //HTTP リクエストのボディを解析するために body-parser モジュールをインポートしています
 const cors = require('cors');
 //オリジン間リソース共有 (CORS)を処理するために cors モジュールをインポートしている
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+// const bcrypt = require('bcrypt');
+// const jwt = require('jsonwebtoken');
 
 
 const app = express();
 const port = 5000;
-const SECRET_KEY = 'your_secret_key';
+//const SECRET_KEY = 'your_secret_key';
 
 // Middleware
 app.use(bodyParser.json());
@@ -42,7 +42,7 @@ app.post('/api/data', (req, res) => {
   });
 });
 
-app.get('/api/data', (req, res) => {
+app.get('/api/data', (res) => {
   db.all('SELECT * FROM Data', (err, rows) => {
     if (err) {
       return res.status(500).send(err.message);
