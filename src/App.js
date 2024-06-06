@@ -24,7 +24,7 @@ function App() {
       .catch(error => {
         console.error('タスクの取得中にエラーが発生しました', error);
       });
-  }, []);
+  }, [todoNameRef]);
 
 
 
