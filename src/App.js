@@ -9,7 +9,7 @@ function App() {
   const [selectedTodoIds, setSelectedTodoIds] = useState([]);
   const todoNameRef = useRef();
 
-  const API_BASE_URL = 'https://zxcvbnm.azurewebsites.net/api';
+  const API_BASE_URL = 'https://lively-dune-01efb9a10.5.azurestaticapps.net../server/server.js';
 
 
 

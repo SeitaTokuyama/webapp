@@ -15,7 +15,7 @@ const cors = require('cors');
 
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;;
 //const SECRET_KEY = 'your_secret_key';
 
 // Middleware
