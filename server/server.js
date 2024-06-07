@@ -42,7 +42,7 @@ app.post('/api/data', (req, res) => {
   });
 });
 
-app.get('/api/data', (res) => {
+app.get('/api/data', (req, res) => {
   db.all('SELECT * FROM Data', (err, rows) => {
     if (err) {
       return res.status(500).send(err.message);
