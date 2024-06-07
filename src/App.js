@@ -9,10 +9,13 @@ function App() {
   const [selectedTodoIds, setSelectedTodoIds] = useState([]);
   const todoNameRef = useRef();
 
+  const API_BASE_URL = 'https://zxcvbnm.azurewebsites.net/api';
+
+
 
   //DBから
   useEffect(() => {
-    axios.get('http://localhost:5000/api/data')
+    axios.get(`${API_BASE_URL}/GetData`)
       .then(response => {
         const loadedTodos = response.data.map(item => ({
           id: item.id,
@@ -33,7 +36,7 @@ function App() {
     if (name === "") return;
     const newTodo = { id: uuidv4(), name, completed: false };
 
-    axios.post('http://localhost:5000/api/data', { name, value: newTodo.completed.toString() })
+    axios.post(`${API_BASE_URL}/PostData`, { name, value: newTodo.completed.toString() })
       .then(response => {
         setTodos((prevTodos) => [...prevTodos, response.data]);
       })
@@ -70,7 +73,7 @@ function App() {
 
   const handleClear = () => {
     const promises = selectedTodoIds.map(todoId => 
-      axios.delete(`http://localhost:5000/api/data/${todoId}`)
+      axios.delete(`${API_BASE_URL}/api/data/${todoId}`)
     );
 
     Promise.all(promises)
