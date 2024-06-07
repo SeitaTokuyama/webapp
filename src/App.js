@@ -12,7 +12,7 @@ function App() {
 
   //DBから
   useEffect(() => {
-    axios.get('https://lively-dune-01efb9a10.5.azurestaticapps.net/api/data')
+    axios.get('https://lively-dune-01efb9a10.5.azurestaticapps.net')
       .then(response => {
         const loadedTodos = response.data.map(item => ({
           id: item.id,
@@ -33,7 +33,7 @@ function App() {
     if (name === "") return;
     const newTodo = { id: uuidv4(), name, completed: false };
 
-    axios.post('https://lively-dune-01efb9a10.5.azurestaticapps.net/api/data', { name, value: newTodo.completed.toString() })
+    axios.post('https://lively-dune-01efb9a10.5.azurestaticapps.net', { name, value: newTodo.completed.toString() })
       .then(response => {
         setTodos((prevTodos) => [...prevTodos, response.data]);
       })
@@ -70,7 +70,7 @@ function App() {
 
   const handleClear = () => {
     const promises = selectedTodoIds.map(todoId => 
-      axios.delete(`https://lively-dune-01efb9a10.5.azurestaticapps.net/api/data/${todoId}`)
+      axios.delete(`https://lively-dune-01efb9a10.5.azurestaticapps.net${todoId}`)
     );
 
     Promise.all(promises)
