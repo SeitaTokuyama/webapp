@@ -24,6 +24,7 @@ app.use(cors());
 
 // SQLiteデータベースの設定
 const db = new sqlite3.Database('mydatabase.db'); // ファイルデータベースを使用
+console.log("aaa");
 //mydatabase.db というファイル名の SQLite データベースに接続するためのコード
 db.serialize(() => {
   db.run('CREATE TABLE IF NOT EXISTS Data (id INTEGER PRIMARY KEY, name TEXT, value TEXT)');
